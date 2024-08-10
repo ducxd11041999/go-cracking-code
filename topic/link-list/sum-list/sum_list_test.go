@@ -19,3 +19,19 @@ func TestSumList(t *testing.T) {
 	result := sum2List(s1, s2, 0)
 	result.Print()
 }
+
+func TestSumListWithDiffSize(t *testing.T) {
+	l1 := model.NewList(7)
+	s1 := l1
+	l1 = l1.AppendInt(1)
+	l1 = l1.AppendInt(6)
+
+	l2 := model.NewList(5)
+	s2 := l2
+	l2 = l2.AppendInt(9)
+
+	// 617 + 95 = 712, so the result is 217
+
+	result := sum2List(s1, s2, 0)
+	result.Print()
+}

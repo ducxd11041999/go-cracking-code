@@ -21,7 +21,15 @@ func sum2List(l1 *model.ListNode, l2 *model.ListNode, carry int) *model.ListNode
 
 	rsNode.Val = sum % 10
 	if l1 != nil || l2 != nil {
-		addNext := sum2List(l1.Next, l2.Next, sum/10)
+		if l1 != nil {
+			l1 = l1.Next
+		}
+
+		if l2 != nil {
+			l2 = l2.Next
+		}
+
+		addNext := sum2List(l1, l2, sum/10)
 		rsNode.Next = addNext
 	}
 
